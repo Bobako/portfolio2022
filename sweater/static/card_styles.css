@@ -214,13 +214,17 @@ main *:not(.task ~ div):not(.buffer):not(header):not(header *):not(.toggle-task)
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
-    align-content: flex-start;
     margin-top: 30px;
 
 }
 
+.flex-container > * {
+    flex-grow: 1;
+}
+
 .test {
     margin-left: 20px;
+    height: 100%;
 }
 
 h3 {
@@ -318,7 +322,8 @@ footer {
         transform: translateY(100%);
         transition: transform 0.4s;
     }
-    .card:hover .short-description{
+
+    .card:hover .short-description {
         transform: translateY(0);
         transition: transform 0.4s;
     }

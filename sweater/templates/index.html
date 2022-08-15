@@ -2,130 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../static/card_styles.css">
-    <title>SiteName</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'card_styles.css')}}">
+    <title>Portfolio2022</title>
 </head>
 <body>
 <main>
     <h3 style="text-align: center;" class="b">Проекты</h3>
     <div class="card-holder">
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
+        {%for project in projects%}
+        <a href="{{url_for('project_card', name=project.name)}}">
+            <div class="card" style=background-image:url("{{project.project_pic_path}}")>
                 <h3 class="card-name">
-                    projectName
+                    {{project.name}}
                 </h3>
                 <div class="card-container">
                     <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
+                        {{project.short_description}}
                     </div>
                 </div>
             </div>
         </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
-        <a href="project-card.html">
-            <div class="card" style="background-image: url('../imgs/test-image.jpg')">
-                <h3 class="card-name">
-                    projectName
-                </h3>
-                <div class="card-container">
-                    <div class="short-description">
-                        Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же вкусно я покушал Бля как же
-                        вкусно я покушал Бля как же вкусно я покушал
-                    </div>
-                </div>
-            </div>
-        </a>
+        {%endfor%}
 
 
     </div>

@@ -2,34 +2,27 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../static/arrow.css">
-    <link rel="stylesheet" type="text/css" href="../static/card_styles.css">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'arrow.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'card_styles.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <script src="../static/scripts.js"></script>
-    <title>ProjectName | SiteName</title>
+    <script src="{{url_for('static',filename = 'scripts.js')}}"></script>
+    <title>{{project.name}} | Portfolio2022</title>
 </head>
 <body>
 
 <main>
-    <div class="project-pic-container wide" style="background-image: url('../imgs/test-image.jpg')">
-        <img class="project-pic" src="../imgs/test-image.jpg">
+    <div class="project-pic-container wide">
+        <img class="project-pic" src="../{{project.project_pic_path}}">
         <header>
-            <a href="/sweater/static" class="btn arrow-container">
+            <a href="{{url_for('index')}}" class="btn arrow-container">
                 <div class="gg-arrow-left">
                 </div>
             </a>
-            <h1>thisProjectName</h1>
+            <h1>{{project.name}}</h1>
         </header>
 
         <div class="description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eget lobortis odio. Etiam et varius libero.
-            In hac habitasse platea dictumst. Aliquam quis fringilla nisi. Donec eleifend lacus eu mauris semper,
-            scelerisque tincidunt eros tempor. Vivamus tincidunt erat commodo volutpat semper. Mauris libero lectus,
-            dignissim nec sapien id, luctus aliquam neque. Nam placerat turpis blandit, euismod dui nec, aliquet nulla.
-            Curabitur posuere velit vitae nulla volutpat vestibulum. Phasellus tempor odio sit amet leo luctus, sit amet
-            pulvinar dolor maximus. Sed hendrerit arcu ac erat ultrices, vitae viverra nisi malesuada. In nec ligula
-            velit. Nullam elementum elementum mauris vel tempus. Ut vestibulum sagittis neque sed semper. Duis lacus
-            magna, aliquam eget congue nec, efficitur nec turpis. Sed volutpat a quam sed ultricies.
+            {{project.description}}
         </div>
     </div>
 
@@ -37,35 +30,27 @@
     <button class="toggle-task btn b wide block" onclick="toggleTask()">Посмотреть тз на проект</button>
     <div class="buffer"></div>
     <div class="task block">
-        Sed nec elementum lectus. Aenean id imperdiet leo. Quisque porttitor sem nec pharetra pretium. Aliquam erat
-        volutpat. Donec malesuada dui enim, id suscipit tellus gravida a. Sed fringilla pellentesque maximus. Proin
-        nec enim convallis, euismod mi sed, dapibus enim. Nam rutrum enim ut quam interdum sollicitudin. Vestibulum
-        laoreet euismod tincidunt. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos
-        himenaeos.
+        {{project.task | safe}}
     </div>
 
 
     <div class="wide flex-container">
-        <a href="">
+        <a href="{{project.test_link}}">
             <div class="test block btn">
                 <h3>Потрогать проект</h3>
-                Доступ предоставлен всем, реальные запросы к API отключены, БД заполнена случайными
-                данными
+                {{project.test_notes}}
             </div>
         </a>
         <div class="techs block">
             <h3>Инструменты</h3>
-            <span class="tech">Flask (Python)</span>
-            <span class="tech">SQLAlchemy ORM (Python)</span>
-            <span class="tech">PostgreSQL</span>
-            <span class="tech">HTML, Jinja2, CSS, JS, JQuery</span>
-            <span class="tech">Apache2</span>
-            <span class="tech">Ubuntu 18.02</span>
+            {%for tech in project.technologies%}
+            <span class="tech">{{tech}}</span>
+            {%endfor%}
         </div>
     </div>
 
     <div class="git b btn wide block ">
-        <a>Исходный код проекта на GitHub</a>
+        <a href="{{project.github_link}}">Исходный код проекта на GitHub</a>
     </div>
 </main>
 <footer>
