@@ -271,6 +271,8 @@ footer {
 }
 
 .card-holder {
+    max-width: 700px;
+    margin:auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
