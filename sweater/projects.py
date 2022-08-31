@@ -23,7 +23,7 @@ class Project:
         self.task = task.replace("\n", "<br>")
         self.technologies = technologies
         self.test_link = test_link
-        self.test_notes = test_notes
+        self.test_notes = test_notes.replace("\n", "<br>")
         self.github_link = github_link
 
     @classmethod
