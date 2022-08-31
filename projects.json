@@ -61,7 +61,7 @@
       "Asyncio"
     ],
     "test_link": "https://github.com/Bobako/tg_responder/archive/refs/heads/master.zip",
-    "test_notes": "Как потрогать проект:\n\n1) Скачать проект (просто ткнуть по этой кнопке).\n2) Далее, либо запускать исполняемый файл ./executables/(linux или windows)/bot_async(.exe)\n3) Либо запускать исходники, для этого:\n4) Нужен [python3.10](https://www.python.org/downloads/) с возможность запускать pip.\n5) В папке с проектом pip install -r requirments.txt\n6) Можно запускать bot_async.py",
+    "test_notes": "Как потрогать проект:\n\n1) Скачать проект (просто ткнуть по этой кнопке).\n2) Далее, либо запускать исполняемый файл ./executables/(linux или windows)/bot_async(.exe)\n3) Либо запускать исходники, для этого:\n4) Нужен python3.10 с возможность запускать pip.\n5) В папке с проектом pip install -r requirments.txt\n6) Можно запускать bot_async.py",
     "github_link": "https://github.com/Bobako/tg_responder"
   },
 
